@@ -6,14 +6,21 @@ public class MGGame : MonoBehaviour
 {
     List<CONEntity> heroConList = new List<CONEntity>();
 
+    private Camera mainCam;
+
     void Awake()
     {
         GameSceneClass.gMGGame = this;
 
-        GameObject.Instantiate(Global.prefabsDic[ePrefabs.MainCamera]);
+        mainCam = GameObject.Instantiate(Global.prefabsDic[ePrefabs.MainCamera]).GetComponent<Camera>();
 
         GameObject castle = GameObject.Instantiate(Global.prefabsDic[ePrefabs.Castle]);
         castle.transform.position = new Vector3(-15f, 0f, 0f);
+
+        GameObject mgWave = GameObject.Instantiate(Global.prefabsDic[ePrefabs.MGWave]);
+        Vector2 maxScreenPoint = mainCam.ViewportToWorldPoint(Vector2.one);
+
+        mgWave.transform.position = new Vector3(maxScreenPoint.x + 2f, 0f);
 
         GameObject.Instantiate(Global.prefabsDic[ePrefabs.BG]);
 

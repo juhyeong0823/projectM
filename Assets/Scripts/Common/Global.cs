@@ -22,6 +22,7 @@ public enum ePrefabs
     MANAGERS = 2000,
     MGPool,
     MGGame,
+    MGWave,
     UI = 3000,
     UIRoot,
     UIRootLoading,
@@ -52,4 +53,5 @@ public class GameSceneClass
     public static UIRootGame gUiRootGame;
     public static MGCastle gMGCastle;
     public static UIInGame gUIIngame;
+    public static MGWave gMGWave;
 }
