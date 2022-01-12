@@ -99,6 +99,8 @@ MonoBehaviour:
   myKind: 4003
   myTrm: {fileID: 0}
   myVelocity: {x: 0, y: 0, z: 0}
+  maxHp: 30
+  moveSpeed: 2
 --- !u!114 &2237320712356863871
 MonoBehaviour:
   m_ObjectHideFlags: 0

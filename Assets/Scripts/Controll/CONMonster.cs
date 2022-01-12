@@ -18,6 +18,7 @@ public class CONMonster : CONCharacter
     public override void OnEnable()
     {
         base.OnEnable();
+        GameSceneClass.gMGWave.monsterList.Add(this);
 
         hp = maxHp;
         myVelocity = new Vector3(-1f * moveSpeed, 0f, 0f);
@@ -26,6 +27,7 @@ public class CONMonster : CONCharacter
     public override void OnDisable()
     {
         base.OnDisable();
+        GameSceneClass.gMGWave.monsterList.Remove(this);
     }
 
     public void GetDamage(int value)
@@ -34,11 +36,16 @@ public class CONMonster : CONCharacter
 
         if (hp <= 0)
         {
-            // 게임오버 처리
-            print("죽음!");
+            OnDie();
 
             hp = 0;
         }
+    }
+
+    private void OnDie()
+    {
+
+        SetActive(false);
     }
 
     protected override void cleanUpOnDisable()

@@ -54,15 +54,16 @@ public class CONArchor : CONCharacter
         {
             CONMonster target = UtilClass.GetNearbyEnemy(myTrm, monsterList);
 
-            StartCoroutine(AttackTarget());
+            StartCoroutine(AttackTarget(target));
         }
     }
 
-    private IEnumerator AttackTarget()
+    private IEnumerator AttackTarget(CONMonster target)
     {
         bCanAttack = false;
 
         print("АјАн!");
+        target.GetDamage(10);
 
         yield return new WaitForSeconds(attackCooltime);
 
