@@ -45,8 +45,11 @@ public class CONMonster : CONCharacter
     private void OnDie()
     {
         GameSceneClass.gMGWave.monsterList.Remove(this);
-        SetActive(false);
+        
 
+        Vector3 pos = GameSceneClass.gMGGame.mainCam.WorldToScreenPoint(this.transform.position);
+        Instantiate(Global.prefabsDic[ePrefabs.PlusButton], pos, Quaternion.identity, GameSceneClass.gUiRootGame.transform.root);
+        SetActive(false);
     }
 
     protected override void cleanUpOnDisable()
