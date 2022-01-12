@@ -44,6 +44,7 @@ public class CONMonster : CONCharacter
     {
         GameSceneClass.gMGWave.monsterList.Remove(this);
         SetActive(false);
+
     }
 
     protected override void cleanUpOnDisable()

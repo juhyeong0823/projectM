@@ -53,6 +53,9 @@ public class UIInGame : MonoBehaviour
         float value = curGage / maxGage;
         skillGage.fillAmount = value;
 
-        skillGageCountText.text = ((int)curGage).ToString();
+        if(value <= 10)
+        {
+            skillGageCountText.text = ((int)curGage).ToString();
+        }
     }
 }

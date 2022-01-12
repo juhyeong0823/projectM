@@ -13,7 +13,7 @@ public class MGGame : MonoBehaviour
     private int maxGameSpeed = 5;
 
     public float CurSkillGage { get; set; }
-    public float MaxSkillGage { get; set; }
+    public float MaxSkillGage = 10f;
     
     public Action OnChangedGameSpeed;
     public Action PlusCurSkillGage;
@@ -67,6 +67,7 @@ public class MGGame : MonoBehaviour
             CurSkillGage += Time.deltaTime;
         }
         SetSkillGage();
+
 
 
 

@@ -91,8 +91,9 @@ GameObject:
   - component: {fileID: 7191042180344571065}
   - component: {fileID: 5707611482215479299}
   - component: {fileID: 2223811509699639273}
+  - component: {fileID: -7758885393221212257}
   m_Layer: 5
-  m_Name: sGagePlusBtn
+  m_Name: PlusButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,3 +201,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-7758885393221212257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906919395007582229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd61a142f0ad055498d5f74e38de5707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myKind: 4005
+  myTrm: {fileID: 0}
+  myVelocity: {x: 0, y: 0, z: 0}
