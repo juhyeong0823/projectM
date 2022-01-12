@@ -13,8 +13,14 @@ public class MGWave : MonoBehaviour
 
     private void Start()
     {
+        CreateMonster();
+        CreateMonster();
+        CreateMonster();
+    }
+
+    private void CreateMonster()
+    {
         CONEntity monsterCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Monster, new Vector3(transform.position.x, Random.Range(-2f, 2f), 0f));
-        monsterCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Monster, new Vector3(transform.position.x, Random.Range(-2f, 2f), 0f));
-        monsterCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Monster, new Vector3(transform.position.x, Random.Range(-2f, 2f), 0f));
+        GameSceneClass.gMGWave.monsterList.Add(monsterCon as CONMonster);
     }
 }
