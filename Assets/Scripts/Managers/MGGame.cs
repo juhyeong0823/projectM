@@ -11,7 +11,11 @@ public class MGGame : MonoBehaviour
         GameSceneClass.gMGGame = this;
 
         GameObject.Instantiate(Global.prefabsDic[ePrefabs.MainCamera]);
-        GameObject.Instantiate(Global.prefabsDic[ePrefabs.Castle]);
+
+        GameObject castle = GameObject.Instantiate(Global.prefabsDic[ePrefabs.Castle]);
+        castle.transform.position = new Vector3(-15f, 0f, 0f);
+
+        GameObject.Instantiate(Global.prefabsDic[ePrefabs.BG]);
 
         heroConList.Clear();
     }

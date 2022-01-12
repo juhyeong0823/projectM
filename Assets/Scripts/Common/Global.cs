@@ -34,6 +34,7 @@ public enum ePrefabs
     Archor,
     Castle,
     Monster,
+    BG
 }
 
 public enum eSceneName
@@ -49,4 +50,5 @@ public class GameSceneClass
     public static MGGame gMGGame;
     public static MGPool gMGPool;
     public static UIRootGame gUiRootGame;
+    public static MGCastle gMGCastle;
 }
