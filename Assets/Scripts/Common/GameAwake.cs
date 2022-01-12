@@ -9,12 +9,6 @@ public class GameAwake : MonoBehaviour
 {
     public static GameAwake Instance {get; private set;}
 
-    private StringBuilder _sb;
-
-    private bool bFirstInit = false;
-
-    private string tempStr;
-
     private void Awake()
     {
         if (Instance == null)
@@ -31,6 +25,12 @@ public class GameAwake : MonoBehaviour
 
         gameObject.hideFlags = HideFlags.HideAndDontSave;
     }
+
+    private StringBuilder _sb;
+
+    private bool bFirstInit = false;
+
+    private string tempStr;
 
     private void Start()
     {
