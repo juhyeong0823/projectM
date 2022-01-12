@@ -9,11 +9,11 @@ public class CONSkill : CONEntity
     public Image skillIcon;
     public int cost;
 
-    public void SetText(int cost, Image icon)
+    public void InitSkill(int cost, Sprite icon)
     {
         this.cost = cost;
         costText.text = cost.ToString();
-        skillIcon = icon;
+        skillIcon.sprite = icon;
     }
 
     public void UseSkill()

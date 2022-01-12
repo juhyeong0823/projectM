@@ -4,5 +4,16 @@ using UnityEngine;
 
 public class CONHeroGirl : CONHero
 {
-    // 히어로 개별 유닛이 가지는 특성 구현
+    public override void Awake()
+    {
+        base.Awake();
+
+        CONSkill skill = GameObject.Instantiate(Global.prefabsDic[ePrefabs.Skill], GameSceneClass.gUIIngame.skillParent).GetComponent<CONSkill>();
+        skill.InitSkill();
+    }
+
+    protected override void ActiveSkill()
+    {
+        
+    }
 }
