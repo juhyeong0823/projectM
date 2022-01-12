@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,16 @@ public class MGGame : MonoBehaviour
     List<CONEntity> heroConList = new List<CONEntity>();
 
     private Camera mainCam;
+
+    private int gameSpeed = 1;
+    private int maxGameSpeed = 5;
+
+    public float CurSkillGage { get; set; }
+    public float MaxSkillGage { get; set; }
+    
+
+    public Action OnChangedGameSpeed;
+    public Action OnChangedSkillGage;
 
     void Awake()
     {
@@ -27,13 +38,39 @@ public class MGGame : MonoBehaviour
         heroConList.Clear();
     }
 
+
+    private void Start()
+    {
+        OnChangedGameSpeed = SetGameSpeed;
+    }
     void OnEnable()
     {
         
     }
 
+    private void SetGameSpeed()
+    {
+        if (gameSpeed > maxGameSpeed) gameSpeed = 1;
+        Time.timeScale = gameSpeed;
+    }
+
+    private void SetSkillGage()
+    {
+        GameSceneClass.gUIIngame.SetSkillGage(CurSkillGage, MaxSkillGage);
+    }
+
+
     void Update()
     {
+        if(CurSkillGage < MaxSkillGage)
+        {
+            CurSkillGage += Time.deltaTime;
+        }
+        SetSkillGage();
+
+
+
+        /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
             CONEntity heroCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.HeroGirl, Random.insideUnitCircle);
@@ -49,7 +86,7 @@ public class MGGame : MonoBehaviour
             }
 
         }
-
+        */
 
 
         // if (Global._gameStat == eGameStatus.Playing)

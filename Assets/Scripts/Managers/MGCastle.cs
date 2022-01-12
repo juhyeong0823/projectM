@@ -14,7 +14,7 @@ public class MGCastle : MonoBehaviour
     private int curHP;
     public int CurHP => curHP;
 
-    private event Action<int, int> onChangeHP;
+    public event Action<float, float> onChangeHP;
 
     private void Awake()
     {

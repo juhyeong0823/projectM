@@ -25,6 +25,13 @@ public class UIInGame : MonoBehaviour
         GameSceneClass.gUIIngame = this;
     }
 
+    private void Start()
+    {
+        GameSceneClass.gMGCastle.onChangeHP += SetHpBar;
+
+        gameSpeedControllBtn.onClick.AddListener(() => GameSceneClass.gMGGame.OnChangedGameSpeed());
+    }
+
     public void SetHpBar(float maxHp, float curHp)
     {
         float value = curHp / maxHp;
@@ -47,15 +54,5 @@ public class UIInGame : MonoBehaviour
         skillGage.fillAmount = value;
 
         skillGageCountText.text = ((int)curGage).ToString();
-    }
-
-    public void SetGameSpeed(int maxGameSpeed, ref int gameSpeed)
-    {
-        if(gameSpeed > maxGameSpeed)
-        {
-            gameSpeed = 1;
-        }
-
-        Time.timeScale = gameSpeed;
     }
 }
