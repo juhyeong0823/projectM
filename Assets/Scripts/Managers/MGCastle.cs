@@ -17,6 +17,8 @@ public class MGCastle : MonoBehaviour
 
     public event Action<float, float> onChangeHP;
 
+    public event Action onGameOver;
+
     private void Awake()
     {
         GameSceneClass.gMGCastle = this;
@@ -34,11 +36,16 @@ public class MGCastle : MonoBehaviour
 
         if (curHP <= 0)
         {
-            // 게임오버 처리
+            OnGameOver();
             curHP = 0;
         }
 
         onChangeHP?.Invoke(maxHP, curHP);
+    }
+
+    private void OnGameOver()
+    {
+        onGameOver?.Invoke();
     }
 
     public void AddArchor()
