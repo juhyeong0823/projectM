@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9053864756735051771}
   - component: {fileID: 9053864756735051770}
-  - component: {fileID: 9053864756735051773}
+  - component: {fileID: 8150619359039741580}
   m_Layer: 0
   m_Name: HeroMan
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9053864756735051773
+--- !u!114 &8150619359039741580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,12 +92,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9053864756735051768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671efdf33bd2d46d7885d01b43af126a, type: 3}
+  m_Script: {fileID: 11500000, guid: 016ad9a061fca4119a938ba53cca3243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myKind: 1001
   myTrm: {fileID: 0}
   myVelocity: {x: 0, y: 0, z: 0}
-  attackDist: 10
+  attackDist: 3
   attackCooltime: 0.5
   moveSpeed: 3
+  skillIcon: {fileID: 21300000, guid: d8534213ddd0e7642872bb81f52cc72d, type: 3}
+  skillCost: 5

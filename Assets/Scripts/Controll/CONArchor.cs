@@ -62,7 +62,7 @@ public class CONArchor : CONCharacter
         bCanAttack = false;
 
         CONArrow arrowCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Arrow, attackPos.position) as CONArrow;
-
+        arrowCon.transform.localScale = new Vector3(1, 3, 1);
         arrowCon.Play(target.myTrm.position, () => 
         {
             target.GetDamage(10);

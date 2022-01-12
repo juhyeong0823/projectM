@@ -34,6 +34,19 @@ public class CONMonster : CONCharacter
         }
     }
 
+    public void Push(bool push = true)
+    {
+        if (push)
+        {
+            canAction = false;
+            transform.position = new Vector3(transform.position.x + 10f, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            canAction = true;
+        }
+    }
+
     public override void OnEnable()
     {
         base.OnEnable();
@@ -82,8 +95,8 @@ public class CONMonster : CONCharacter
 
     public override void Update()
     {
-        if (!canAction) return;
 
+        if (!canAction) return;
         base.Update();
 
         CheckCastle();

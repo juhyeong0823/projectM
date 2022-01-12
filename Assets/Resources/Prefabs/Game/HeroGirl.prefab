@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 647134169409435799}
   - component: {fileID: 3254342822729914959}
   - component: {fileID: 7348915107713623589}
+  - component: {fileID: 3715652320311668909}
   m_Layer: 0
   m_Name: HeroGirl
   m_TagString: Untagged
@@ -103,3 +104,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3715652320311668909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126957719968890159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95143843b66743b4abca4e76a0ca293a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bRunOnce: 1
+  posOffsetY: 0
