@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 3126957719968890159, guid: e3926d4485b7c4fc0815888cf1a8ec14, type: 3}
   - {fileID: 3126957719968890159, guid: b72ed1f71c4344d99abfe355860f9655, type: 3}
   - {fileID: 2237320712356863867, guid: 773631fe94d931c4f8fc4f0c2d3a757c, type: 3}
-  poolHeroCountList: 01000000010000000a000000
-  poolHeroMaxCount: 3
+  - {fileID: 9209241950780954022, guid: 600b8532a9fda9f4a9a0ed23225d8ae0, type: 3}
+  poolHeroCountList: 01000000010000000a0000000a000000
+  poolHeroMaxCount: 4
   myTrm: {fileID: 0}

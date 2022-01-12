@@ -21,6 +21,11 @@ public class MGCastle : MonoBehaviour
         GameSceneClass.gMGCastle = this;
     }
 
+    private void Start()
+    {
+        AddArchor();
+    }
+
     public void GetDamage(int value)
     {
         curHP -= value;
@@ -32,5 +37,10 @@ public class MGCastle : MonoBehaviour
         }
 
         onChangeHP?.Invoke(maxHP, curHP);
+    }
+
+    public void AddArchor()
+    {
+        CONEntity archorCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Archor, archerTrmList[0].position);
     }
 }

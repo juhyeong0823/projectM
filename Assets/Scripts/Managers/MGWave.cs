@@ -14,5 +14,6 @@ public class MGWave : MonoBehaviour
     private void Start()
     {
         CONEntity monsterCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Monster, new Vector3(transform.position.x, Random.Range(-2f, 2f), 0f));
+        monsterList.Add(monsterCon as CONMonster);
     }
 }
