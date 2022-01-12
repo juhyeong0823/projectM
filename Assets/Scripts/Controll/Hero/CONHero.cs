@@ -21,6 +21,9 @@ public class CONHero : CONCharacter
 
     public float moveSpeed = 3f;
 
+    public Sprite skillIcon;
+    public int skillCost;
+
     public override void Awake()
     {
         base.Awake();
@@ -97,20 +100,20 @@ public class CONHero : CONCharacter
     {
         myVelocity = new Vector3(walkDir * moveSpeed, 0f);
 
-        Vector3 screenMax = GameSceneClass.gMGGame.mainCam.ViewportToScreenPoint(new Vector3(1f, 1f));
+        Vector3 screenMax = GameSceneClass.gMGGame.mainCam.ViewportToWorldPoint(new Vector3(1f, 1f));
         Vector3 screenMin = GameSceneClass.gMGCastle.attackTrm.position;
 
         // 화면 밖을 넘어섰다면
         if (myTrm.position.x > screenMax.x)
         {
-            myTrm.position.Set(screenMax.x, myTrm.position.y, 0f);
+            myTrm.position = new Vector3(screenMax.x, myTrm.position.y, 0f);
             walkDir = -1f;
 
             sr.flipX = false;
         }
         else if (myTrm.position.x < screenMin.x)
         {
-            myTrm.position.Set(screenMin.x, myTrm.position.y, 0f);
+            myTrm.position = new Vector3(screenMin.x, myTrm.position.y, 0f);
             walkDir = 1f;
 
             sr.flipX = true;
