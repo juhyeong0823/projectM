@@ -13,7 +13,8 @@ public class UIInGame : MonoBehaviour
     public Image wavePrograssBar;
     public Text waveNumberText;
 
-    public Button[] skillBtns; 
+
+    public Transform skillParent;
 
     public Image skillGage;
     public Text skillGageCountText;
@@ -30,6 +31,7 @@ public class UIInGame : MonoBehaviour
         GameSceneClass.gMGCastle.onChangeHP += SetHpBar;
 
         gameSpeedControllBtn.onClick.AddListener(() => GameSceneClass.gMGGame.OnChangedGameSpeed());
+
     }
 
     public void SetHpBar(float maxHp, float curHp)
