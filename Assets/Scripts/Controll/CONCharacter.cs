@@ -11,8 +11,8 @@ public class CONCharacter : CONEntity
 
     protected bool bCanAttack = true;
 
-    protected float attackDist;
-    protected float attackCooltime;
+    public float attackDist;
+    public float attackCooltime;
 
     public override void Awake()
     {

@@ -10,6 +10,8 @@ public class CONMonster : CONCharacter
 
     public float moveSpeed = 2f;
 
+    public bool isDie;
+
     public override void Awake()
     {
         base.Awake();
@@ -45,7 +47,8 @@ public class CONMonster : CONCharacter
     private void OnDie()
     {
         GameSceneClass.gMGWave.monsterList.Remove(this);
-        
+
+        isDie = true;
 
         Vector3 pos = GameSceneClass.gMGGame.mainCam.WorldToScreenPoint(this.transform.position);
         Instantiate(Global.prefabsDic[ePrefabs.PlusButton], pos, Quaternion.identity, GameSceneClass.gUiRootGame.transform.root);
