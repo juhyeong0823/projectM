@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CONMonster : CONCharacter
 {
+    public float moveSpeed = 2f;
+
     public override void Awake()
     {
         base.Awake();
@@ -13,7 +15,7 @@ public class CONMonster : CONCharacter
     {
         base.OnEnable();
 
-        myVelocity = new Vector3(-1f, 0f, 0f);
+        myVelocity = new Vector3(-1f * moveSpeed, 0f, 0f);
     }
 
     public override void OnDisable()
