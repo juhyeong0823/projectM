@@ -15,9 +15,8 @@ public class MGGame : MonoBehaviour
     public float CurSkillGage { get; set; }
     public float MaxSkillGage { get; set; }
     
-
     public Action OnChangedGameSpeed;
-    public Action OnChangedSkillGage;
+    public Action PlusCurSkillGage;
 
     void Awake()
     {
@@ -42,6 +41,7 @@ public class MGGame : MonoBehaviour
     private void Start()
     {
         OnChangedGameSpeed = SetGameSpeed;
+        PlusCurSkillGage = () => CurSkillGage++;
     }
     void OnEnable()
     {
