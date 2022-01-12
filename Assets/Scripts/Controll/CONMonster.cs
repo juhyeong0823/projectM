@@ -19,6 +19,20 @@ public class CONMonster : CONCharacter
 
         attackCooltime = 1f;
     }
+    
+    public void Stop(bool stop = true)
+    {
+        if (stop)
+        {
+            canAction = false;
+            myVelocity = Vector3.zero;
+        }
+        else
+        {
+            canAction = true;
+            myVelocity = Vector3.zero;
+        }
+    }
 
     public override void OnEnable()
     {
