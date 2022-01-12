@@ -51,4 +51,5 @@ public class GameSceneClass
     public static MGPool gMGPool;
     public static UIRootGame gUiRootGame;
     public static MGCastle gMGCastle;
+    public static UIInGame gUIIngame;
 }

@@ -5,23 +5,6 @@ using UnityEngine.UI;
 
 public class UIInGame : MonoBehaviour
 {
-    public static UIInGame Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        gameObject.hideFlags = HideFlags.HideAndDontSave;
-    }
-
     [Header("Ã¼·Â¹Ù")]
     public Image hpBar;
     public Text hpText;
@@ -33,8 +16,39 @@ public class UIInGame : MonoBehaviour
     public Button[] skillBtns; 
 
     public Image skillGage;
-    public Text skillGageCount;
+    public Text skillGageCountText;
 
     public Button gameSpeedControllBtn;
 
+    private void Awake()
+    {
+        GameSceneClass.gUIIngame = this;
+    }
+
+    public void SetHpBar(float maxHp, float curHp)
+    {
+        float value = curHp / maxHp;
+        hpBar.fillAmount = value;
+    }
+
+    public void SetWaveInfo(int curWaveIndex, float curPrograss, float maxPrograss)
+    {
+        waveNumberText.text = $"WAVE {curWaveIndex}"; 
+
+        float value = curPrograss / maxPrograss;
+        wavePrograssBar.fillAmount = value;
+    }
+
+    public void SetSkillGage(float curGage, float maxGage)
+    {
+        float value = curGage / maxGage;
+        skillGage.fillAmount = value;
+
+        skillGageCountText.text = Mathf.Floor(value).ToString();
+    }
+
+    public void SetGameSpeed(int maxGameSpeed, int gameSpeed)
+    {
+        Time.timeScale = gameSpeed;
+    }
 }
