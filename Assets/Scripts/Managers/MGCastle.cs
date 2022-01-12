@@ -20,6 +20,7 @@ public class MGCastle : MonoBehaviour
     private void Awake()
     {
         GameSceneClass.gMGCastle = this;
+        curHP = maxHP;
     }
 
     private void Start()
