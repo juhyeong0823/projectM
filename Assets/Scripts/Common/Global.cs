@@ -36,7 +36,8 @@ public enum ePrefabs
     Castle,
     Monster,
     BG,
-    PlusButton
+    PlusButton,
+    Arrow
 }
 
 public enum eSceneName

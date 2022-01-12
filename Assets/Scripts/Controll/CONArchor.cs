@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CONArchor : CONCharacter
 {
-    
+    public Transform attackPos;
 
     public override void Awake()
     {
@@ -62,8 +62,12 @@ public class CONArchor : CONCharacter
     {
         bCanAttack = false;
 
-        print("АјАн!");
-        target.GetDamage(10);
+        CONArrow arrowCon = GameSceneClass.gMGPool.CreateObj(ePrefabs.Arrow, attackPos.position) as CONArrow;
+
+        arrowCon.Play(target.myTrm.position, () => 
+        {
+            target.GetDamage(10);
+        });
 
         yield return new WaitForSeconds(attackCooltime);
 
