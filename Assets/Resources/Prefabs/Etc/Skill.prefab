@@ -232,6 +232,7 @@ MonoBehaviour:
   costText: {fileID: 3429407755631488334}
   skillIcon: {fileID: 784860565026103034}
   cost: 0
+  skillBtn: {fileID: 5664853398350390960}
 --- !u!1 &6416112440829156929
 GameObject:
   m_ObjectHideFlags: 0

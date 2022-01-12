@@ -7,6 +7,7 @@ public class CONMonster : CONCharacter
 {
     public float maxHp;
     protected float hp;
+    public bool canAction;
 
     public float moveSpeed = 2f;
 
@@ -22,7 +23,7 @@ public class CONMonster : CONCharacter
     public override void OnEnable()
     {
         base.OnEnable();
-
+        canAction = true;
         hp = maxHp;
         bCanAttack = true;
     }
@@ -67,6 +68,8 @@ public class CONMonster : CONCharacter
 
     public override void Update()
     {
+        if (!canAction) return;
+
         base.Update();
 
         CheckCastle();
