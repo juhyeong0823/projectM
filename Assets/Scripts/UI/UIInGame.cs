@@ -19,7 +19,7 @@ public class UIInGame : MonoBehaviour
     public Text skillGageCountText;
 
     public Button gameSpeedControllBtn;
-
+    public Text gameSpeedText;
     private void Awake()
     {
         GameSceneClass.gUIIngame = this;

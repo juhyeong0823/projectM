@@ -52,6 +52,7 @@ public class MGGame : MonoBehaviour
     {
         if (gameSpeed > maxGameSpeed) gameSpeed = 1;
         Time.timeScale = gameSpeed;
+        GameSceneClass.gUIIngame.gameSpeedText.text = $"X{gameSpeed}";
     }
 
     private void SetSkillGage()
