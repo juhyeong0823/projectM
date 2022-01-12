@@ -101,7 +101,7 @@ MonoBehaviour:
   myVelocity: {x: 0, y: 0, z: 0}
   attackDist: 0
   attackCooltime: 0
-  maxHp: 100
+  maxHp: 30
   canAction: 0
   moveSpeed: 3
   isDie: 0

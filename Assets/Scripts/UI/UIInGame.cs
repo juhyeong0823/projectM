@@ -21,6 +21,9 @@ public class UIInGame : MonoBehaviour
 
     public Button gameSpeedControllBtn;
     public Text gameSpeedText;
+
+    public CanvasGroup cg;
+
     private void Awake()
     {
         GameSceneClass.gUIIngame = this;
@@ -31,7 +34,6 @@ public class UIInGame : MonoBehaviour
         GameSceneClass.gMGCastle.onChangeHP += SetHpBar;
 
         gameSpeedControllBtn.onClick.AddListener(() => GameSceneClass.gMGGame.OnChangedGameSpeed());
-
     }
 
     public void SetHpBar(float maxHp, float curHp)
@@ -40,6 +42,13 @@ public class UIInGame : MonoBehaviour
         hpBar.fillAmount = value;
 
         hpText.text = ((int)curHp).ToString();
+    }
+
+    public void SetGameOver(bool set)
+    {
+        cg.alpha = set ? 1 : 0;
+        cg.blocksRaycasts = set;
+        cg.interactable = set;
     }
 
     public void SetWaveInfo(int curWaveIndex, float curPrograss, float maxPrograss)
