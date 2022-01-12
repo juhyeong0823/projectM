@@ -9,6 +9,8 @@ public class CONCharacter : CONEntity
     // 고유 캐릭터 스탯 데이터
     // 애니메이션 정보
 
+    protected bool bCanAttack = true;
+
     protected float attackDist;
     protected float attackCooltime;
 

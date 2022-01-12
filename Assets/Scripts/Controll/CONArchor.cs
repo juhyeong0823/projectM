@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CONArchor : CONCharacter
 {
-    private bool bCanAttack = true;
+    
 
     public override void Awake()
     {
