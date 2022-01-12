@@ -73,6 +73,7 @@ MonoBehaviour:
   skillGage: {fileID: 6950739964613709573}
   skillGageCountText: {fileID: 3578134354479175627}
   gameSpeedControllBtn: {fileID: 1501240132475377734}
+  gameSpeedText: {fileID: 3659155489497795800}
 --- !u!1 &679550246877045574
 GameObject:
   m_ObjectHideFlags: 0

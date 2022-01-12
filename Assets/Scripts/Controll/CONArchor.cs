@@ -53,7 +53,6 @@ public class CONArchor : CONCharacter
         if (monsterList.Count > 0)
         {
             CONMonster target = UtilClass.GetNearbyEnemy(myTrm, monsterList);
-
             StartCoroutine(AttackTarget(target));
         }
     }

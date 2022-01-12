@@ -7,7 +7,7 @@ public class MGGame : MonoBehaviour
 {
     List<CONEntity> heroConList = new List<CONEntity>();
 
-    private Camera mainCam;
+    public Camera mainCam;
 
     private int gameSpeed = 1;
     private int maxGameSpeed = 5;
@@ -23,7 +23,7 @@ public class MGGame : MonoBehaviour
         GameSceneClass.gMGGame = this;
 
         mainCam = GameObject.Instantiate(Global.prefabsDic[ePrefabs.MainCamera]).GetComponent<Camera>();
-
+        
         GameObject castle = GameObject.Instantiate(Global.prefabsDic[ePrefabs.Castle]);
         castle.transform.position = new Vector3(-15f, 0f, 0f);
 
@@ -35,23 +35,28 @@ public class MGGame : MonoBehaviour
         GameObject.Instantiate(Global.prefabsDic[ePrefabs.BG]);
 
         heroConList.Clear();
+
+        
     }
 
-
-    private void Start()
-    {
-        OnChangedGameSpeed = SetGameSpeed;
-        PlusCurSkillGage = () => CurSkillGage++;
-    }
     void OnEnable()
     {
         
     }
 
+
+    private void Start()
+    {
+        OnChangedGameSpeed += SetGameSpeed;
+        PlusCurSkillGage += () => CurSkillGage++;
+    }
     private void SetGameSpeed()
     {
+        gameSpeed++;
+        Debug.Log($"{gameSpeed} + {maxGameSpeed} + {Time.timeScale}");
         if (gameSpeed > maxGameSpeed) gameSpeed = 1;
         Time.timeScale = gameSpeed;
+        GameSceneClass.gUIIngame.gameSpeedText.text = $"X{gameSpeed}";
     }
 
     private void SetSkillGage()
@@ -64,7 +69,7 @@ public class MGGame : MonoBehaviour
     {
         if(CurSkillGage < MaxSkillGage)
         {
-            CurSkillGage += Time.deltaTime;
+            CurSkillGage += Time.deltaTime * 0.25f;
         }
         SetSkillGage();
 
