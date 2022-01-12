@@ -24,7 +24,7 @@ public class CONHeroGirl : CONHero
 
     protected override void ActiveSkill()
     {
-        Debug.Log("스킬발동");
+        StopCoroutine(StopAllMonster());
         StartCoroutine(StopAllMonster());
     }
 
@@ -32,11 +32,17 @@ public class CONHeroGirl : CONHero
     {
         List<CONMonster> monsters = GameSceneClass.gMGWave.monsterList;
 
-        for (int i = 0; i < monsters.Count; i++) monsters[i].canAction = false;
+        for (int i = 0; i < monsters.Count; i++)
+        {
+            monsters[i].Stop();
+        }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
-        for (int i = 0; i < monsters.Count; i++) monsters[i].canAction = true;
+        for (int i = 0; i < monsters.Count; i++)
+        {
+            monsters[i].Stop(false);
+        }
     }
 
 }

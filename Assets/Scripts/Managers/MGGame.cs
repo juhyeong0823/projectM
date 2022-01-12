@@ -34,6 +34,15 @@ public class MGGame : MonoBehaviour
 
         GameObject.Instantiate(Global.prefabsDic[ePrefabs.BG]);
 
+        GameObject hero1  = GameObject.Instantiate(Global.prefabsDic[ePrefabs.HeroGirl]);
+        GameObject hero2  = GameObject.Instantiate(Global.prefabsDic[ePrefabs.HeroMan]);
+
+        int rand = UnityEngine.Random.Range(-2, 2);
+        hero1.transform.position = new Vector3(hero1.transform.position.x, rand, hero1.transform.position.z);
+
+        rand = UnityEngine.Random.Range(-2, 2);
+        hero2.transform.position = new Vector3(hero2.transform.position.x, rand, hero2.transform.position.z);
+
         heroConList.Clear();
 
         
