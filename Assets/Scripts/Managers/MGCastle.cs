@@ -8,6 +8,7 @@ public class MGCastle : MonoBehaviour
     public Transform attackTrm;
     public List<Transform> archerTrmList = new List<Transform>();
 
+    [SerializeField]
     private int maxHP;
     public int MaxHP => maxHP;
 

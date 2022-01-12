@@ -303,6 +303,7 @@ MonoBehaviour:
   - {fileID: 4766391409624233565}
   - {fileID: 6402265768658091481}
   - {fileID: 4424217886369422396}
+  maxHP: 100
 --- !u!1 &432572134999382355
 GameObject:
   m_ObjectHideFlags: 0

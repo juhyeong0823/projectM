@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class CONMonster : CONCharacter
     {
         base.Awake();
 
+        attackCooltime = 1f;
     }
 
     public override void OnEnable()
@@ -20,7 +22,7 @@ public class CONMonster : CONCharacter
         base.OnEnable();
 
         hp = maxHp;
-        myVelocity = new Vector3(-1f * moveSpeed, 0f, 0f);
+        bCanAttack = true;
     }
 
     public override void OnDisable()
@@ -54,5 +56,45 @@ public class CONMonster : CONCharacter
     protected override void firstUpdate()
     {
         base.firstUpdate();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        CheckCastle();
+    }
+
+    private void CheckCastle()
+    {
+        if (transform.position.x < GameSceneClass.gMGCastle.attackTrm.position.x)
+        {
+            myVelocity = Vector3.zero;
+
+            AttackCastle();
+        }
+        else
+        {
+            myVelocity = new Vector3(-1f * moveSpeed, 0f, 0f);
+        }
+    }
+
+    private void AttackCastle()
+    {
+        if (!bCanAttack) return;
+
+        StartCoroutine(AttackTarget());
+    }
+
+    private IEnumerator AttackTarget()
+    {
+        bCanAttack = false;
+
+        print("АјАн!");
+        GameSceneClass.gMGCastle.GetDamage(10);
+
+        yield return new WaitForSeconds(attackCooltime);
+
+        bCanAttack = true;
     }
 }
