@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 000db57d89f5b644c80be6842a300332, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.6, y: 1.6}
@@ -98,6 +98,6 @@ MonoBehaviour:
   myKind: 1001
   myTrm: {fileID: 0}
   myVelocity: {x: 0, y: 0, z: 0}
-  attackDist: 2
+  attackDist: 10
   attackCooltime: 0.5
   moveSpeed: 3
