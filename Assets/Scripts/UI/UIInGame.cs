@@ -29,6 +29,8 @@ public class UIInGame : MonoBehaviour
     {
         float value = curHp / maxHp;
         hpBar.fillAmount = value;
+
+        hpText.text = ((int)curHp).ToString();
     }
 
     public void SetWaveInfo(int curWaveIndex, float curPrograss, float maxPrograss)
@@ -44,11 +46,16 @@ public class UIInGame : MonoBehaviour
         float value = curGage / maxGage;
         skillGage.fillAmount = value;
 
-        skillGageCountText.text = Mathf.Floor(value).ToString();
+        skillGageCountText.text = ((int)curGage).ToString();
     }
 
-    public void SetGameSpeed(int maxGameSpeed, int gameSpeed)
+    public void SetGameSpeed(int maxGameSpeed, ref int gameSpeed)
     {
+        if(gameSpeed > maxGameSpeed)
+        {
+            gameSpeed = 1;
+        }
+
         Time.timeScale = gameSpeed;
     }
 }
