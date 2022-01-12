@@ -27,6 +27,13 @@ public enum ePrefabs
     UIRootLoading,
     UIRootTitle,
     UIRootGame,
+    UISkill,
+    UISkillGage,
+    UIGameSpeedControll,
+    Prop = 4000,
+    Archor,
+    Castle,
+    Monster,
 }
 
 public enum eSceneName
